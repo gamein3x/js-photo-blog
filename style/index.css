@@ -12,8 +12,27 @@
     min-width: 100%;
 }
 
-.photo-container {
-    max-width: 400px;
-    background: green;
+.titolo {
+    line-height: 70px;
+    font-size: 50px;
+}
+
+.main {
     margin: 0 auto;
+    width: 80%;
+}
+
+/* Container */
+
+.photo-container {
+    width: 100%;
+    background: green;
+    padding: 10px;
+    position: relative;
+}
+
+.pin {
+    position: absolute;
+    left: 50%;
+    top: -2%;
 }
