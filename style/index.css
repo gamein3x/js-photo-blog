@@ -5,3 +5,15 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.head {
+    background-image: url("../assets_day1/img/wall.png");
+    height: 80px;
+    min-width: 100%;
+}
+
+.photo-container {
+    max-width: 400px;
+    background: green;
+    margin: 0 auto;
+}
