@@ -1,0 +1,22 @@
+/* Reset */
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.posts-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.posts-container {
+    .post {
+        border: 2px solid blue;
+        border-radius: 15px;
+        background-color: aliceblue;
+    }
+}

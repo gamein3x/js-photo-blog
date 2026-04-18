@@ -1,0 +1,1 @@
+# Questo folder contiene gli appunti della lezione del venerdì.
