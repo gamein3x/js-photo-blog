@@ -1,116 +1,87 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Ivan Caldarella">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- Font Google-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Edu+TAS+Beginner:wght@550&family=Sigmar&display=swap"
+        rel="stylesheet">
+
+    <!-- Style -->
     <link rel="stylesheet" href="./style/index.css">
 
     <title>Estate '24 - Photo Blog</title>
-
 </head>
 
 <body>
-    <header id="head" class="head">
-        <h1 class="titolo text-center fst-italic">
-            ESTATE '24
-        </h1>
+    <header class="header">
+        <h1 class="head-title edu-tas">ESTATE '24</h1>
     </header>
-    <main id="main" class="main">
-        <div class="container main-cointainer">
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 photo-row">
-                <div id="photo-container0" class="photo-container">
-                    <div class="pin">
-                        <img src="./assets_day1/img/pin.svg" alt="Photo pin">
-                    </div>
-                    <div class="photo-img" id="photo-img0">
-                        <!-- Le IMG verranno rimosse e sostituite con innerHTML collegato all'API-->
-                        <img src="https://picsum.photos/id/200/200/300" alt="" id="img0" class="img-thumbnail photo" >
-                    </div>
-                    <!-- Anche il P verrà rimosso e generato con innertHTML ma -->
-                    <p class="photo-description" id="description0">Lorem ipsum, dolor sit amet consectetur adipisicing
-                        elit.
-                        Dolorum natus rerum, placeat ducimus deserunt eveniet sunt beatae commodi explicabo perferendis
-                        neque
-                        ullam nisi, quos corporis, hic ipsa ut consequuntur nemo?</p>
+    <main class="main">
+        <div class="main-container" id="main-container"> <!--Container per settare margine e dimensione massima-->
+            <div class="photo-card" id="photo-card">
+                <div class="pin-container">
+                    <img src="./assets_day1/img/pin.svg" alt="Pin">
                 </div>
-                <div id="photo-container1" class="photo-container">
-                    <div class="pin">
-                        <img src="./assets_day1/img/pin.svg" alt="Photo pin">
-                    </div>
-                    <div class="photo-img" id="photo-img1">
-                        <img src="https://picsum.photos/id/237/200/300" alt="" id="img1">
-                    </div>
-                    <p class="photo-description" id="description1">Lorem ipsum dolor sit amet consectetur adipisicing
-                        elit.
-                        Dolorum nulla ducimus, minima nam tenetur ratione cupiditate aliquam in voluptas suscipit,
-                        voluptatum
-                        quam id fugiat culpa consectetur asperiores eos nobis rerum.</p>
+                <div class="img-container">
+                    <img src="./test-img/29xp-meme-superJumbo-v3.jpg" alt="Photo">
                 </div>
-                <div id="photo-container2" class="photo-container">
-                    <div class="pin">
-                        <img src="./assets_day1/img/pin.svg" alt="Photo pin">
-                    </div>
-                    <div class="photo-img" id="photo-img2">
-                        <img src="https://picsum.photos/id/238/200/300" alt="" id="img2">
-                    </div>
-                    <p class="photo-description" id="description2">Lorem ipsum dolor sit amet consectetur adipisicing
-                        elit. Odit
-                        ex soluta, animi nesciunt aperiam totam tempora neque autem illo ab eius sed quis porro ratione
-                        eaque,
-                        accusamus cupiditate commodi eveniet.</p>
+                <p class="photo-description mono">Meow.</p>
+            </div>
+            <div class="photo-card" id="photo-card">
+                <div class="pin-container">
+                    <img src="./assets_day1/img/pin.svg" alt="Pin">
                 </div>
-                <div id="photo-container3" class="photo-container">
-                    <div class="pin">
-                        <img src="./assets_day1/img/pin.svg" alt="Photo pin">
-                    </div>
-                    <div class="photo-img" id="photo-img3">
-                        <img src="https://picsum.photos/id/239/200/300" alt="" id="img3">
-                    </div>
-                    <p class="photo-description" id="description3">Lorem, ipsum dolor sit amet consectetur adipisicing
-                        elit.
-                        Odit provident animi rem soluta ad magni repudiandae repellendus architecto laborum, delectus
-                        officiis
-                        reprehenderit perferendis deleniti possimus ipsam harum dolore ipsum fuga?</p>
+                <div class="img-container">
+                    <img src="./test-img/29xp-meme-superJumbo-v3.jpg" alt="Photo">
                 </div>
-                <div id="photo-container4" class="photo-container">
-                    <div class="pin">
-                        <img src="./assets_day1/img/pin.svg" alt="Photo pin">
-                    </div>
-                    <div class="photo-img" id="photo-img4">
-                        <img src="https://picsum.photos/id/240/200/300" alt="" id="img4">
-                    </div>
-                    <p class="photo-description" id="description4">Lorem ipsum dolor, sit amet consectetur adipisicing
-                        elit.
-                        Ipsa a repellendus non necessitatibus laboriosam nemo molestiae vitae? Quas pariatur ipsam,
-                        itaque
-                        consectetur, eius qui, saepe ea ullam nulla maiores architecto.</p>
+                <p class="photo-description mono">Meow.</p>
+            </div>
+            <div class="photo-card" id="photo-card">
+                <div class="pin-container">
+                    <img src="./assets_day1/img/pin.svg" alt="Pin">
                 </div>
-                <div id="photo-container5" class="photo-container">
-                    <div class="pin">
-                        <img src="./assets_day1/img/pin.svg" alt="Photo pin">
-                    </div>
-                    <div class="photo-img" id="photo-img5">
-                        <img src="https://picsum.photos/id/247/200/300" alt="" id="img5">
-                    </div>
-                    <p class="photo-description" id="description5">Lorem ipsum dolor sit amet consectetur adipisicing
-                        elit.
-                        Quam, impedit ab ipsa mollitia architecto error excepturi illo minima cum non obcaecati
-                        repellendus
-                        voluptatem a tempore ducimus? Expedita praesentium suscipit deserunt?</p>
+                <div class="img-container">
+                    <img src="./test-img/29xp-meme-superJumbo-v3.jpg" alt="Photo">
                 </div>
+                <p class="photo-description mono">Meow.</p>
+            </div>
+            <div class="photo-card" id="photo-card">
+                <div class="pin-container">
+                    <img src="./assets_day1/img/pin.svg" alt="Pin">
+                </div>
+                <div class="img-container">
+                    <img src="./test-img/29xp-meme-superJumbo-v3.jpg" alt="Photo">
+                </div>
+                <p class="photo-description mono">Meow.</p>
+            </div>
+            <div class="photo-card" id="photo-card">
+                <div class="pin-container">
+                    <img src="./assets_day1/img/pin.svg" alt="Pin">
+                </div>
+                <div class="img-container">
+                    <img src="./test-img/29xp-meme-superJumbo-v3.jpg" alt="Photo">
+                </div>
+                <p class="photo-description mono">Meow.</p>
+            </div>
+            <div class="photo-card" id="photo-card">
+                <div class="pin-container">
+                    <img src="./assets_day1/img/pin.svg" alt="Pin">
+                </div>
+                <div class="img-container">
+                    <img src="./test-img/29xp-meme-superJumbo-v3.jpg" alt="Photo">
+                </div>
+                <p class="photo-description mono">Meow.</p>
             </div>
         </div>
 
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
-    <script src="./script.js"></script>
 </body>
 
 </html>

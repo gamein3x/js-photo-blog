@@ -1,65 +1,105 @@
-/* Reset */
+/*RESET*/
+
 * {
     margin: 0;
-    border: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.head {
-    background-image: url("../assets_day1/img/wall.png");
-    height: 80px;
-    min-width: 100%;
+body {
+    margin: 0 auto;
 }
 
-.titolo {
-    line-height: 70px;
-    font-size: 50px;
+/* Font utility */
+
+.edu-tas {
+    font-family: "Edu TAS Beginner", cursive;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.mono {
+    font-family: "Sometype Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Struttura top-down */
+
+.header {
+    background-image: url(../assets_day1/img/wall.png);
+    height: 120px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.head-title {
+    text-align: center;
+    position: relative;
+    top: 10%;
+    font-size: 75px;
+    text-shadow: 3px 5px 2px rgba(0, 0, 0, 0.325);
 }
 
 .main {
-    background-image: url("../assets_day1/img/cork.png");
+    background-image: url('../assets_day1/img/cork.png');
 }
 
-
-
-/* Container */
-
-.main-cointainer {
-    padding-top: 25px;
-}
-
-.photo-row {
-    gap: 10px;
+.main-container {
+    margin: 0 10%;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 40px;
+    column-gap: var(--gap-set);
     justify-content: center;
+    padding: 5% 0;
 }
 
-.photo-container {
-    min-width: 200px;
-    max-width: 300px;
-    background: green;
+.photo-card {
+    background: rgb(255, 255, 255);
+    width: 100%;
     padding: 10px;
     position: relative;
-    flex-wrap: wrap;
-    box-shadow: 5px 10px #0000005e;
     transform: rotate(-1deg);
+    box-shadow: 2px 5px 16px rgb(0, 0, 0);
 }
 
-.pin {
+.pin-container {
     position: absolute;
-    left: 45%;
-    top: -3%;
+    top: -2%;
+    left: 47.5%;
 }
 
-.photo-img {
-    display: flex;
-    justify-content: center;
-    aspect-ratio: 1;
-}
-
-.photo {
+.img-container>img {
     width: 100%;
+    aspect-ratio: 1;
+    object-fit: fill;
+}
+
+/* Media query e variabili*/
+
+:root {
+    --gap-set: 5%;
+}
+
+@media screen and (min-width: 768px) {
+    .photo-card {
+        flex-basis: calc(50% - var(--gap-set));
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .photo-card {
+        flex-basis: calc(33.3% - var(--gap-set));
+    }
 }
 
 /* Eventi */
 
+.photo-card:hover {
+    transform: rotate(3deg) scale(1.1);
+    transition: 0.2s;
+}
