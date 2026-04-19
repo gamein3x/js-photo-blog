@@ -14,14 +14,12 @@ body {
 
 .edu-tas {
     font-family: "Edu TAS Beginner", cursive;
-    font-optical-sizing: auto;
     font-weight: 600;
     font-style: normal;
 }
 
 .mono {
     font-family: "Sometype Mono", monospace;
-    font-optical-sizing: auto;
     font-weight: normal;
     font-style: normal;
 }
@@ -46,16 +44,16 @@ body {
 
 .main {
     background-image: url('../assets_day1/img/cork.png');
+    padding-bottom: 40px;
 }
 
 .main-container {
     margin: 0 10%;
     display: flex;
     flex-wrap: wrap;
-    row-gap: 40px;
+    row-gap: 80px;
     column-gap: var(--gap-set);
     justify-content: center;
-    padding: 5% 0;
 }
 
 .photo-card {
@@ -65,12 +63,14 @@ body {
     position: relative;
     transform: rotate(-1deg);
     box-shadow: 2px 5px 16px rgb(0, 0, 0);
+    min-height: 320px;
+    aspect-ratio: 2/2.5;
 }
 
 .pin-container {
     position: absolute;
     top: -2%;
-    left: 47.5%;
+    left: 45%;
 }
 
 .img-container>img {
@@ -79,6 +79,27 @@ body {
     object-fit: fill;
 }
 
+.photo-description {
+    margin: 1.5%;
+    text-align: center;
+    line-height: 4;
+}
+
+.btn-box {
+    display: flex;
+    justify-content: center;
+}
+.add-btn {
+    text-decoration: none;
+    color: white;
+    background: rgba(200, 169, 32, 0.664);
+    padding: 20px;
+    border-radius: 20px;
+    border: 2px solid rgba(255, 220, 67, 0.664);
+    letter-spacing: 1.5px;
+    font-size: 25px;
+    display: inline-block;
+}
 /* Media query e variabili*/
 
 :root {
@@ -89,11 +110,19 @@ body {
     .photo-card {
         flex-basis: calc(50% - var(--gap-set));
     }
+
+    .main-container {
+        row-gap: 40px;
+        padding: 5% 0;
+    }
 }
 
 @media screen and (min-width: 1200px) {
     .photo-card {
         flex-basis: calc(33.3% - var(--gap-set));
+    }
+    .main-container {
+        padding: 10% 0;
     }
 }
 
@@ -101,5 +130,10 @@ body {
 
 .photo-card:hover {
     transform: rotate(3deg) scale(1.1);
+    transition: 0.2s;
+}
+
+.add-btn:hover {
+    transform: scale(1.05);
     transition: 0.2s;
 }
