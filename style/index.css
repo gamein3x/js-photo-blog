@@ -18,21 +18,48 @@
 }
 
 .main {
-    margin: 0 auto;
-    width: 80%;
+    background-image: url("../assets_day1/img/cork.png");
 }
+
+
 
 /* Container */
 
+.main-cointainer {
+    padding-top: 25px;
+}
+
+.photo-row {
+    gap: 10px;
+    justify-content: center;
+}
+
 .photo-container {
-    width: 100%;
+    min-width: 200px;
+    max-width: 300px;
     background: green;
     padding: 10px;
     position: relative;
+    flex-wrap: wrap;
+    box-shadow: 5px 10px #0000005e;
+    transform: rotate(-1deg);
 }
 
 .pin {
     position: absolute;
-    left: 50%;
-    top: -2%;
+    left: 45%;
+    top: -3%;
 }
+
+.photo-img {
+    display: flex;
+    justify-content: center;
+    aspect-ratio: 1;
+}
+
+.photo {
+    width: 100%;
+}
+
+/* Eventi */
+
