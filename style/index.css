@@ -158,3 +158,12 @@ body {
     transition: 0.2s;
 }
 
+/* Modale */
+
+.d-none {
+    display: none;
+}
+
+.photo-overlay-box {
+    z-index: 99;
+}

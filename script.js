@@ -32,11 +32,15 @@ function renderCards(posts) {
     }
 }
 
-function renderModal(url, alt) {
+function renderModal(url, alt, desc) {
     const template = document.querySelector('#modale');
     const img = template.querySelector('img');
+    const description = document.querySelector('#modal-desc');
+    const Dclass = template.classList;
+    Dclass.remove('d-none');
     img.src = url;
     img.alt = alt;
+    description.innerHTML = desc;
 };
 
 cardContainer?.addEventListener('click', (event) => {
@@ -47,15 +51,16 @@ cardContainer?.addEventListener('click', (event) => {
     const cardEl = target.closest('.photo-card');
     const urlGrab = cardEl.querySelector('.img-container img').src;
     const altGrab = cardEl.querySelector('.img-container img').alt;
+    const descGrab = cardEl.querySelector('p').innerHTML;
 
     if (!urlGrab) {
         return console.log('vuoto');
     } else {
-        console.log(urlGrab, altGrab);
+        console.log(urlGrab, altGrab, descGrab);
     }
     
-    renderModal(urlGrab, altGrab);
-    return urlGrab, altGrab;
+    renderModal(urlGrab, altGrab, descGrab);
+    return urlGrab, altGrab, descGrab;
 });
 
 fetch(MAIN_API_URL)
