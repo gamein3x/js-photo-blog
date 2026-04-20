@@ -4,7 +4,6 @@
 const MAIN_API_URL = 'https://lanciweb.github.io/demo/api/pictures/';
 
 const cardContainer = document.querySelector('#main-container');
-console.log(cardContainer);
 
 
 /**
@@ -33,21 +32,30 @@ function renderCards(posts) {
     }
 }
 
-function renderOverlay(posts) {
+function renderModal(url, alt) {
     const template = document.querySelector('#modale');
-
-    
-
-}
+    const img = template.querySelector('img');
+    img.src = url;
+    img.alt = alt;
+};
 
 cardContainer?.addEventListener('click', (event) => {
     const target = event.target;
 
     if (!target) {return null;}
 
-    const cardEl = target.closest('.photo-card .img-container img');
-    const urlGrab = cardEl.src;
-    console.log(urlGrab);
+    const cardEl = target.closest('.photo-card');
+    const urlGrab = cardEl.querySelector('.img-container img').src;
+    const altGrab = cardEl.querySelector('.img-container img').alt;
+
+    if (!urlGrab) {
+        return console.log('vuoto');
+    } else {
+        console.log(urlGrab, altGrab);
+    }
+    
+    renderModal(urlGrab, altGrab);
+    return urlGrab, altGrab;
 });
 
 fetch(MAIN_API_URL)
