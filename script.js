@@ -25,7 +25,7 @@ function renderCards(posts) {
                 <div class="img-container">
                     <img src="${post.url}" alt="Photo album n.${post.id}: ${post.title}">
                 </div>
-                <p class="photo-description mono">${post.date}</p>
+                <p class="photo-description mono">${post.date}<br>${post.title}</p>
             </div>
 `;
     }
