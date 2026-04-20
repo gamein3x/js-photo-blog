@@ -1,7 +1,5 @@
-// @ts-check
-`use strict`
 
-const placeholder = 'bella';
+`use strict`
 
 const MAIN_API_URL = 'https://lanciweb.github.io/demo/api/pictures/';
 
@@ -34,6 +32,23 @@ function renderCards(posts) {
         cardContainer.innerHTML = cardBlockHTML;
     }
 }
+
+function renderOverlay(posts) {
+    const template = document.querySelector('#modale');
+
+    
+
+}
+
+cardContainer?.addEventListener('click', (event) => {
+    const target = event.target;
+
+    if (!target) {return null;}
+
+    const cardEl = target.closest('.photo-card .img-container img');
+    const urlGrab = cardEl.src;
+    console.log(urlGrab);
+});
 
 fetch(MAIN_API_URL)
     .then(response => {

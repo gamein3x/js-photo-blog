@@ -145,9 +145,12 @@ body {
 /* Eventi */
 
 .photo-card:hover {
-    /*transform: rotate(calc(360deg*)) scale(1.1);
-    transition: 0.2s;*/
-    animation: spin 1s infinite;
+    transform: rotate(3deg) scale(1.1);
+    transition: 0.2s;
+    /*animation: spin 1s infinite;*/
+    .pin-container {
+        display: none;
+    }
 }
 
 .add-btn:hover {
