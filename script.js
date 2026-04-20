@@ -3,17 +3,25 @@
 
 const MAIN_API_URL = 'https://lanciweb.github.io/demo/api/pictures/';
 
-const cardContainer = document.querySelector('#main-container');
 
-// Costanti template
+
+// Selettori
+const cardContainer = document.querySelector('#main-container');
 const template = document.querySelector('#modale');
 const templateEscBtn = template.querySelector('.close-btn');
 const Dclass = template.classList;
-
+const fileLoad = document.querySelector('#loader');
+const formTest = document.querySelector('#testform');
 
 /**
  *  @param {{ id: number, title: string, date: string, url: string}[]} posts
  */
+
+
+
+
+
+/** FUNZIONI **/
 
 function renderCards(posts) {
     let cardBlockHTML = '';
@@ -47,10 +55,13 @@ function renderModal(url, alt, desc) {
     description.innerHTML = desc;
 };
 
+/** EVENTI **/
+
+/* Evento click per cards */
 cardContainer?.addEventListener('click', (event) => {
     const target = event.target;
 
-    if (!target) {return null;}
+    if (!target) { return null; }
 
     const cardEl = target.closest('.photo-card');
     const urlGrab = cardEl.querySelector('.img-container img').src;
@@ -62,16 +73,38 @@ cardContainer?.addEventListener('click', (event) => {
     } else {
         console.log(urlGrab, altGrab, descGrab);
     }
-    
+
     renderModal(urlGrab, altGrab, descGrab);
     return urlGrab, altGrab, descGrab;
 });
 
+/* Evento click chiudi bottone*/
 templateEscBtn?.addEventListener('click', (event) => {
     Dclass.remove('d-flex');
     Dclass.add('d-none');
 });
 
+/* Evento changhe di input file */ //LOGICA FUNZIONA!!!
+fileLoad.addEventListener('change', function () {
+    const file = fileLoad.files[0];  // Primo file selezionato
+    if (!file) return;
+
+    // Estrai info base
+    const fileInfo = `Nome: ${file.name}, Tipo: ${file.type}, Dimensione: ${file.size} bytes`;
+    console.log(fileInfo);
+
+    // Estrai URL
+    const reader = new FileReader();
+    const imgInForm = formTest.querySelector('img');
+    reader.onload = function (e) {
+        const dataURL = e.target.result;  // Data URL
+        imgInForm.src = dataURL;
+    };
+    const fileURL = reader.readAsDataURL(file);  // Leggi come URL per img
+    console.log(fileURL);
+});
+
+/* Fetch */
 fetch(MAIN_API_URL)
     .then(response => {
         return response.json();
