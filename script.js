@@ -5,6 +5,11 @@ const MAIN_API_URL = 'https://lanciweb.github.io/demo/api/pictures/';
 
 const cardContainer = document.querySelector('#main-container');
 
+// Costanti template
+const template = document.querySelector('#modale');
+const templateEscBtn = template.querySelector('.close-btn');
+const Dclass = template.classList;
+
 
 /**
  *  @param {{ id: number, title: string, date: string, url: string}[]} posts
@@ -33,11 +38,10 @@ function renderCards(posts) {
 }
 
 function renderModal(url, alt, desc) {
-    const template = document.querySelector('#modale');
     const img = template.querySelector('img');
     const description = document.querySelector('#modal-desc');
-    const Dclass = template.classList;
     Dclass.remove('d-none');
+    Dclass.add('d-flex');
     img.src = url;
     img.alt = alt;
     description.innerHTML = desc;
@@ -61,6 +65,11 @@ cardContainer?.addEventListener('click', (event) => {
     
     renderModal(urlGrab, altGrab, descGrab);
     return urlGrab, altGrab, descGrab;
+});
+
+templateEscBtn?.addEventListener('click', (event) => {
+    Dclass.remove('d-flex');
+    Dclass.add('d-none');
 });
 
 fetch(MAIN_API_URL)
