@@ -233,13 +233,14 @@ body {
     width: 50%;
     padding: 10px;
     position: relative;
-    transform: rotate(-1deg);
     box-shadow: 2px 5px 16px rgb(0, 0, 0);
     min-height: 320px;
     aspect-ratio: 2/2.5;
     flex-wrap: wrap;
     margin-bottom: 30px;
     justify-content: center;
+    align-items: center;
+    column-gap: 50px;
 }
 
 .fb-flex img {
@@ -247,4 +248,21 @@ body {
     aspect-ratio: 1;
     width: 100%;
     height: 80%;
+}
+
+.addnew-btn {
+    color: rgb(6, 133, 19);
+    width: 50px;
+    aspect-ratio: 1;
+    border-radius: 10px;
+    border: 5px solid rgb(6, 133, 19);
+    background-color: rgb(7, 207, 0);
+    font-size: 30px;
+    line-height: 10px;
+    font-weight: bolder;
+}
+
+.addnew-btn:hover {
+    transform: scale(1.1);
+    transition: 0.2s;
 }
