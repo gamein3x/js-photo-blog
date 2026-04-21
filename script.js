@@ -17,10 +17,6 @@ const formTest = document.querySelector('#testform');
  *  @param {{ id: number, title: string, date: string, url: string}[]} posts
  */
 
-
-
-
-
 /** FUNZIONI **/
 
 function renderCards(posts) {
@@ -115,4 +111,5 @@ fetch(MAIN_API_URL)
         console.error(error);
     }).finally(() => {
         console.log('Caricato');
+        console.log(':) poppe');
     });
